@@ -1,0 +1,153 @@
+.card {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 30%;
+    position: relative;
+}
+.card__buttons {
+    left: 340px;
+}
+.card__bookmark {
+    background-image: url(../../images/bookmark1.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    position: absolute;
+    right: -263px;
+    top: 16px;
+}
+
+.card__bookmark:hover {
+    background-image: url(../../images/bookmark2.svg);
+}
+
+.card__bookmark:active {
+    background-image: url(../../images/bookmark3.svg);
+    border: none;
+}
+.card__bookmark:focus {
+    background-image: url(../../images/bookmark3.svg);
+    border: none;
+}
+.card__item {
+    -o-object-fit: cover;
+    object-fit: cover;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+}
+
+.card__text {
+    justify-content: space-between;
+    color: black;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    flex-direction: column;
+    width: 352px;
+    margin: auto;
+    background-color: white;
+    padding: 24px;
+}
+
+.card__header {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    font-family: 'Roboto Slab';
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0;
+    text-align: left;
+
+}
+
+.card__span-like {
+    font-size: 13px;
+    line-height: 16px;
+    margin-top: 1px;
+}
+
+.card__article {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0px;
+    text-align: left;
+
+}
+
+.card__button {
+    width: 155.94px;
+    height: 42.58px;
+    border-radius: 33.9597px;
+    color: white;
+    font-weight: 600;
+    font-size: 11.0889px;
+    line-height: 13px;
+    border: none;
+    cursor: pointer;
+}
+
+.card__date {
+    font-family: 'Source Sans Pro';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #B6BCBF;
+}
+
+.card__source {
+    color: #B6BCBF;
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+@media (max-width: 1420px) {
+    .card__text {
+        width: 224px;
+        padding: 0 0 0 16px;
+    }
+    .card__item {
+        width: 239px;
+    }
+    .card__buttons {
+        left: 166px;
+    }
+    .card__bookmark {
+        right: -105px;
+    }
+}
+
+@media (max-width: 900px) {
+    .card__bookmark {
+        right: -132px;
+    }
+
+}
+@media (max-width: 700px) {
+    .card__item {
+      width: 288px;
+    }
+    .card__text {
+        width: 272px;
+    }
+    .card__buttons {
+        left: 231px;
+    }
+
+}
