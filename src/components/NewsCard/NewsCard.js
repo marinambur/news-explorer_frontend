@@ -10,7 +10,7 @@ function NewsCard() {
                 <button className="news-card__button card__bookmark">
                 </button>
             </div>
-            <img data-name="" className="card__item" src={pic}/>
+            <img data-name="" className="card__item" src={pic} alt="Картинка новости"/>
             <div className="news-card__text-box">
                 <div className="card__text">
                     <p className="card__date">2 августа, 2019</p>

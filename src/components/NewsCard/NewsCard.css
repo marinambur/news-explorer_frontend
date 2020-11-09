@@ -1,7 +1,7 @@
 .card {
     background: #FFFFFF;
     border-radius: 10px;
-    width: 30%;
+    width: 400px;
     position: relative;
 }
 .card__buttons {
@@ -13,7 +13,7 @@
     background-position: center;
     cursor: pointer;
     position: absolute;
-    right: -263px;
+    right: 16px;
     top: 16px;
 }
 
@@ -77,14 +77,13 @@
 }
 
 .card__article {
-    font-family: 'Roboto';
+    font-family: 'Roboto', Arial, sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 22px;
     letter-spacing: 0px;
     text-align: left;
-    height: 84px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -105,7 +104,7 @@
 }
 
 .card__date {
-    font-family: 'Source Sans Pro';
+    font-family: 'Source Sans Pro', Arial, sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -117,7 +116,7 @@
 
 .card__source {
     color: #B6BCBF;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', Arial, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -132,23 +131,27 @@
     .card__item {
         width: 224px;
     }
+    .card {
+        width: 224px;
+    }
     .card__buttons {
         left: 166px;
     }
     .card__bookmark {
-        right: -105px;
     }
 }
 
 @media (max-width: 900px) {
     .card__bookmark {
-        right: -132px;
     }
 
 }
 @media (max-width: 700px) {
     .card__item {
       width: 288px;
+    }
+    .card {
+        width: 288px;
     }
     .card__text {
         width: 272px;

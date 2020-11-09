@@ -12,7 +12,7 @@ function SavedNewsCard(props) {
                 </button>
             </div>
 
-            <img data-name="" className="card__item" src={props.pic}/>
+            <img data-name="" className="card__item" src={props.pic} alt="Картинка сохраненной новости"/>
             <div className="news-card__text-box">
                 <div className="news-card__text">
                     <p className="news-card__date">2 августа, 2019</p>

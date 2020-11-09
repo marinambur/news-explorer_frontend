@@ -5,7 +5,6 @@ import Header from '../Header/Header';
 import SavedNews from '../SavedNews/SavedNews';
 import About from "../About/About";
 import Footer from "../Footer/Footer";
-import NewsCard from "../NewsCard/NewsCard";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import Preloader from "../Preloader/Preloader";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";

@@ -7,7 +7,7 @@
 
 .footer__copyright {
     color: #B6BCBF;
-    font-family: 'Roboto';
+    font-family: 'Roboto', Arial, sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -18,7 +18,7 @@
 }
 
 .footer__links {
-    font-family: 'Roboto';
+    font-family: 'Roboto', Arial, sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;

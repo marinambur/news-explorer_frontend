@@ -12,14 +12,16 @@
     height: 64px;
     border: none;
     outline: none;
+    font-family: 'Roboto', Arial, sans-serif;
     -webkit-appearance: none;
     box-shadow: 0 0 17px rgba(0, 0, 0, 0.08);
     width: 430px;
     text-indent: 16px;
+    z-index: 1;
 }
 
 .search-form__input::placeholder {
-    font-family: Roboto;
+    font-family: 'Roboto', Arial, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -29,13 +31,15 @@
 }
 
 .search-form__button {
-    font-family: Roboto;
+    font-family: Roboto, Arial, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
     background: #2F71E5;
     margin-left: -50px;
+    z-index: 3;
 }
+
 .search-form__button:hover {
     background: #347EFF;
 }
@@ -47,7 +51,7 @@
     height: 65px;
     border-radius: 33.9597px;
     color: white;
-    font-family: Roboto;
+    font-family: Roboto, Arial, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;

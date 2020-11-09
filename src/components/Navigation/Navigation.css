@@ -25,7 +25,7 @@
 
 .navigation-news__link-mobile_circle {
 
-    font-family: 'Roboto';
+    font-family: 'Roboto', Arial, sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
@@ -39,7 +39,7 @@
     cursor: auto;
 }
 .navigation__link {
-    font-family: 'Roboto';
+    font-family: 'Roboto', Arial, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -55,7 +55,7 @@
     border: 1px solid #FFFFFF;
     border-radius: 100px;
     padding: 10px 15px;
-    font-family: 'Roboto';
+    font-family: 'Roboto', Arial, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;

@@ -1,7 +1,5 @@
 import React from "react";
 import './Footer.css';
-import Navigation from "../Navigation/Navigation";
-import SearchForm from "../SearchForm/SearchForm";
 function Footer() {
     return (
         <footer className="footer">

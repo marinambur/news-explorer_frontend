@@ -28,11 +28,13 @@
 }
 
 .news__header {
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', Arial, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 40px;
     line-height: 46px;
+    width: 95%;
+    margin: auto;
 }
 
 .news__button {
@@ -48,7 +50,7 @@
 
 @media (max-width: 1420px) {
     .news__header {
-
+        width: 90%;
     }
 }
 
@@ -62,10 +64,13 @@
     .news {
         padding-top: 12px;
     }
+
     .news__grid {
         grid-template-columns: 1fr;
-        padding-top: 4px;
+        padding-top: 24px;
         grid-gap: 10px;
+        padding-bottom: 42px;
+        margin-bottom: 35px;
     }
 
     .news__header {
