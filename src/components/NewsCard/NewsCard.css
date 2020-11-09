@@ -51,6 +51,8 @@
     margin: auto;
     background-color: white;
     padding: 24px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .card__header {
@@ -82,7 +84,12 @@
     line-height: 22px;
     letter-spacing: 0px;
     text-align: left;
-
+    height: 84px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 
 .card__button {
@@ -119,11 +126,11 @@
 
 @media (max-width: 1420px) {
     .card__text {
-        width: 224px;
+        width: 202px;
         padding: 0 0 0 16px;
     }
     .card__item {
-        width: 239px;
+        width: 224px;
     }
     .card__buttons {
         left: 166px;

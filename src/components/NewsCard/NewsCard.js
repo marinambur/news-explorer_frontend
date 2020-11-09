@@ -2,6 +2,7 @@ import React from "react";
 import pic from '../../images/image_08.jpg';
 
 import './NewsCard.css';
+
 function NewsCard() {
     return (
         <div className="card">
@@ -10,13 +11,15 @@ function NewsCard() {
                 </button>
             </div>
             <img data-name="" className="card__item" src={pic}/>
-            <div className="card__text">
-                <p className="card__date">2 августа, 2019</p>
-                <h3 className="card__header">Национальное достояние – парки</h3>
-                <p className="card__article">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала
-                    складываться система национальных парков – охраняемых территорий, где и сегодня каждый может
-                    приобщиться к природе.</p>
-                <p className="card__source">ЛЕНТА.РУ</p>
+            <div className="news-card__text-box">
+                <div className="card__text">
+                    <p className="card__date">2 августа, 2019</p>
+                    <h3 className="card__header">Национальное достояние – парки</h3>
+                    <p className="card__article">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала
+                        складываться система национальных парков – охраняемых территорий, где и сегодня каждый может
+                        приобщиться к природе.</p>
+                    <p className="card__source">ЛЕНТА.РУ</p>
+                </div>
             </div>
         </div>
     );

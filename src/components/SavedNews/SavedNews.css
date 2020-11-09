@@ -37,13 +37,18 @@
     color: #B6BCBF;
 }
 .savednews {
-    width: 90%;
+    width: 100%;
     margin: auto;
 }
 .savednews__box {
     width: 33%;
+    margin-left: 5%;
+    margin-bottom: 40px;
 }
-
+.news__container {
+    width: 100%;
+    background: #F5F6F7;
+}
 
 @media screen and (max-width: 1420px) {
     .savednews__box {

@@ -33,7 +33,6 @@
 
 @media screen and (max-width: 1420px) {
     .header {
-        height: 400px;
     }
 
     .header__title {
@@ -54,18 +53,29 @@
     }
 
 }
+@media screen and (max-width: 769px) {
+    .header {
+        height: 400px;
+        background: url("../../images/pic-tablet.jpg") no-repeat;
+    }
+}
 @media screen and (max-width: 750px) {
     .header__title {
         padding-top: 30px;
     }
-    .header {
-        height: 536px;
-    }
+
     .header__subtitle {
         font-size: 18px;
         line-height: 24px;
     }
     .header__text {
         width: 90%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .header {
+        height: 536px;
+        background: url("../../images/pic-mobile.jpg") no-repeat;
     }
 }

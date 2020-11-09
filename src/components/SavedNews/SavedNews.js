@@ -10,14 +10,18 @@ function SavedNews() {
                 <div className="savednews__box">
                     <p className="card__date">Сохранённые статьи</p>
                     <h3 className="card__header">Грета, у вас 5 сохранённых статей</h3>
-                    <p className="card__article">По ключевым словам: <span className="card__article_span">Природа, Тайга</span> и <span className="card__article_span">2-м другим</span></p>
+                    <p className="card__article">По ключевым словам: <span
+                        className="card__article_span">Природа, Тайга</span> и <span className="card__article_span">2-м другим</span>
+                    </p>
                 </div>
-                <div className="news__grid">
-                    <SavedNewsCard pic = {pic1}/>
-                    <SavedNewsCard pic = {pic1}/>
-                    <SavedNewsCard pic = {pic1}/>
-                    <SavedNewsCard pic = {pic1}/>
-                    <SavedNewsCard pic = {pic1}/>
+                <div className="news__container">
+                    <div className="news__grid">
+                        <SavedNewsCard pic={pic1}/>
+                        <SavedNewsCard pic={pic1}/>
+                        <SavedNewsCard pic={pic1}/>
+                        <SavedNewsCard pic={pic1}/>
+                        <SavedNewsCard pic={pic1}/>
+                    </div>
                 </div>
             </section>
 
