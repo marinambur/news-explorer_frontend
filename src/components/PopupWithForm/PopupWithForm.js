@@ -2,7 +2,7 @@
 import React from 'react';
 import './PopupWithForm.css';
 
-    const PopupWithForm = ({ isPopupOpen, closePopup, isConfirm}) => {
+    const PopupWithForm = ({ isPopupOpen, closePopup, isConfirm, handleSigninSubmit}) => {
 
         function handleClose(e) {
             let a = e.target.closest('.popup')
@@ -51,7 +51,7 @@ import './PopupWithForm.css';
                 {(isConfirm) ? '' :
                     <>
                         <span className="popup__span-button popup__span-error_active">Такой пользователь уже есть</span>
-                        <button className="popup__button-add popup__button-add_disabled" type="submit" disabled>{button}</button>
+                        <button className="popup__button-add popup__button-add_disabled" onClick={handleSigninSubmit} type="submit">{button}</button>
                         <p className="popup__footer">или<span onClick={onRegistry} className="popup__link">{link}</span></p>
                     </>
                 }

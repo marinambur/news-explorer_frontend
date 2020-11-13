@@ -3,22 +3,21 @@ import pic from '../../images/image_08.jpg';
 
 import './NewsCard.css';
 
-function NewsCard() {
+function NewsCard(props) {
+    console.log(props.card.title)
     return (
         <div className="card">
             <div className="card__buttons">
                 <button className="news-card__button card__bookmark">
                 </button>
             </div>
-            <img data-name="" className="card__item" src={pic} alt="Картинка новости"/>
+            <img data-name="" className="card__item" src={props.card.urlToImage} alt="Картинка новости"/>
             <div className="news-card__text-box">
                 <div className="card__text">
-                    <p className="card__date">2 августа, 2019</p>
-                    <h3 className="card__header">Национальное достояние – парки</h3>
-                    <p className="card__article">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала
-                        складываться система национальных парков – охраняемых территорий, где и сегодня каждый может
-                        приобщиться к природе.</p>
-                    <p className="card__source">ЛЕНТА.РУ</p>
+                    <p className="card__date">{props.card.publishedAt}</p>
+                    <h3 className="card__header">{props.card.title}</h3>
+                    <p className="card__article">{props.card.description}</p>
+                    <p className="card__source">{props.card.source.name}</p>
                 </div>
             </div>
         </div>
