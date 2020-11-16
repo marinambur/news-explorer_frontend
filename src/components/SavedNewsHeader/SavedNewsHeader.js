@@ -1,9 +1,20 @@
 import React from "react";
 import './SavedNewsHeader.css';
 import { NavLink} from "react-router-dom";
-
-function SavedNewsHeader({onMenu, isMenuOpen, closeMenu}) {
-
+import {useHistory} from 'react-router-dom';
+import {CurrentUserContext} from "../../contexts/CurrentUserContext";
+function SavedNewsHeader({onMenu, isMenuOpen, closeMenu, auth}) {
+    const { name } = React.useContext(CurrentUserContext);
+    const history = useHistory();
+    const [userName, setUserName] = React.useState('');
+    React.useEffect(() => {
+        setUserName(name);
+    }, [name]);
+    function logOut () {
+        history.push('/');
+        auth();
+        localStorage.removeItem('jwt');
+    }
 
     return (
         <div className="navigation-news_header">
@@ -17,7 +28,9 @@ function SavedNewsHeader({onMenu, isMenuOpen, closeMenu}) {
                     <a className="navigation-news__link navigation-news__link_active">Сохранённые&nbsp;статьи</a>
 
                     <button className="navigation-news__button">
-                        <p className="navigation-news__button-text">Грета</p>
+                        <NavLink
+                            exact
+                            to="/" className="navigation-news__button-text" onClick={logOut}>{userName}</NavLink>
                         <i className="navigation-news__exit exit-icon exit-icon-white"></i>
                     </button>
                     <button className="navigation-news__menu" onClick={onMenu}></button>

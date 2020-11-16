@@ -16,6 +16,7 @@ class NewsApi {
             headers: this._headers
         })
             .then(res => {
+                console.log(res)
                 return this._getResponseData(res);
             });
     }

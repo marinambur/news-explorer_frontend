@@ -14,6 +14,7 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     cursor: pointer;
+    max-height: 200px;
 }
 
 .news-card__text {
@@ -147,6 +148,7 @@
 }
 .news-card__text-box {
     margin-top: -4px;
+    width: 440px;
 }
 @media (max-width: 1420px) {
     .news-card__text {

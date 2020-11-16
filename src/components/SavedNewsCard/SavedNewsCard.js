@@ -3,25 +3,38 @@ import React from "react";
 import './SavedNewsCard.css';
 
 function SavedNewsCard(props) {
+    const [id, setId] = React.useState('');
+    const deleteArticle = (id) => {
+        const jwt = localStorage.getItem('jwt');
+        props.delete(jwt, id)
+            .then((res) => {
+                console.log(res);
+                props.saveNews((prev) => {
+                    const result = prev.filter(item => item !== props.id);
+                    localStorage.removeItem('saved');
+                    localStorage.setItem('saved', JSON.stringify(result));
+                    return result;
+                })
+                //setCardMarked();
+            })
+            .catch(err => console.log(err))
+    }
     return (
-        <div className="news-card">
+        <div id={id} className="news-card">
             <div className="news-card__buttons">
-                <button className="news-card__tag">Природа</button>
+                <button className="news-card__tag">{props.keyword}</button>
                 <button className="news-card__delete">Убрать из сохраненных</button>
-                <button className="news-card__button news-card__trash">
+                <button onClick={() => deleteArticle(props.id)} className="news-card__button news-card__trash">
                 </button>
             </div>
 
             <img data-name="" className="card__item" src={props.pic} alt="Картинка сохраненной новости"/>
             <div className="news-card__text-box">
                 <div className="news-card__text">
-                    <p className="news-card__date">2 августа, 2019</p>
-                    <h3 className="news-card__header">Национальное достояние – парки</h3>
-                    <p className="news-card__article">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
-                        начала
-                        складываться система национальных парков – охраняемых территорий, где и сегодня каждый может
-                        приобщиться к природе.</p>
-                    <p className="news-card__source">ЛЕНТА.РУ</p>
+                    <p className="news-card__date">{props.date}</p>
+                    <h3 className="news-card__header">{props.title}</h3>
+                    <p className="news-card__article">{props.text}</p>
+                    <p className="news-card__source">{props.source}</p>
                 </div>
             </div>
         </div>

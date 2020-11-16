@@ -1,14 +1,29 @@
 import React from "react";
-import pic from '../../images/image_08.jpg';
-
 import './NewsCard.css';
 
 function NewsCard(props) {
-    console.log(props.card.title)
+    const [id, setId] = React.useState('');
+    const saveArticle = () => {
+        const jwt = localStorage.getItem('jwt');
+        console.log(jwt)
+        props.saveArticleRequest(jwt, {keyword: props.keyword, title: props.title, text: props.text, date: props.date,
+            source: props.source, link: props.data.url, image: props.image })
+            .then((res) => {
+                console.log(res, 'savedinApi')
+                 setId(res._id);
+                props.saveNews((myNews) => {
+                    console.log(myNews)
+                    localStorage.setItem('saved', JSON.stringify([...myNews, props.data.id]));
+                    return [...myNews, props.data.id]
+                });
+            })
+            .catch(err => console.log(err));
+
+    }
     return (
         <div className="card">
             <div className="card__buttons">
-                <button className="news-card__button card__bookmark">
+                <button onClick={saveArticle} className="news-card__button card__bookmark">
                 </button>
             </div>
             <img data-name="" className="card__item" src={props.card.urlToImage} alt="Картинка новости"/>

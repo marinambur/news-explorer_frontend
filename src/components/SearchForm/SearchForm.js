@@ -8,6 +8,7 @@ function SearchForm(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         props.handleSearch();
+
     }
     return (
         <div className="search-form__search">
