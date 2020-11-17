@@ -74,7 +74,6 @@ const Register = ({ onEnter, closeRegister, close, isConfirm,  isRegisterOpen, o
     function onRegistry() {
         SetIsLogin(!isLogin);
     }
-    console.log(isRegisterOpen);
 
 
     return (

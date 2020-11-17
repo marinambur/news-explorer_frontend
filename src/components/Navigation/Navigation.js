@@ -3,17 +3,17 @@ import './Navigation.css';
 import { useHistory, NavLink } from 'react-router-dom';
 import {CurrentUserContext} from "../../contexts/CurrentUserContext";
 
-function Navigation({ onAddPlace, isOpen, onMenu, isMenuOpen, closeMenu, loggedIn, auth }) {
+function Navigation({ onAddPlace, isOpen, onMenu, isMenuOpen, closeMenu, loggedIn, auth, isLoginOpen, handleLogin }) {
     const { name } = React.useContext(CurrentUserContext);
     const [userName, setUserName] = React.useState('');
     const history = useHistory();
-console.log('auth', auth)
     React.useEffect(() => {
         setUserName(name);
     }, [name]);
     function logOut () {
         auth();
         localStorage.removeItem('jwt');
+        handleLogin()
     }
 
     return (
@@ -33,9 +33,11 @@ console.log('auth', auth)
                     <button className="navigation-news__mobile_close-button button-close" onClick={closeMenu}
                             type="button"></button>
                     <a className="navigation-news__title navigation-news__title-mobile">News explorer</a>
-                    <a className="navigation-news__link-mobile">Главная</a>
-                    <a className="navigation-news__link-mobile">Сохранённые&nbsp;статьи</a>
-                    <a className="navigation-news__link-mobile_circle navigation-news__link_circle ">Авторизоваться</a>
+                    <NavLink
+                        to="/" className="navigation-news__link-mobile">Главная</NavLink>
+                    {loggedIn ? <NavLink
+                        to="/saved-news" className="navigation-news__link-mobile">Сохранённые&nbsp;статьи</NavLink> : ''}
+                    {loggedIn ? '' : <a className="navigation-news__link-mobile_circle navigation-news__link_circle " onClick={onAddPlace}>Авторизоваться</a>}
                 </div>
             </div>
 

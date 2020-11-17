@@ -19,7 +19,6 @@ function SavedNews(props) {
         setKeywords(props.articles.map(myArticle => myArticle.keyword[0].toUpperCase() + myArticle.keyword.slice(1)));
     }, [props.articles])
 
-    console.log(props.saved)
     return (
         <>
             <section className="savednews">

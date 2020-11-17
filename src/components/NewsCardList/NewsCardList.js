@@ -13,7 +13,6 @@ function NewsCardList(props) {
     const [saved, setSaved] = React.useState([]);
     React.useEffect(() => {
         const saved = localStorage.getItem('saved');
-        console.log('saved', saved)
         if (saved) {
             setSaved(JSON.parse(saved));
         }

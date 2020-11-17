@@ -65,6 +65,9 @@ function App() {
         setLoginOpen(!isLoginOpen);
         setRegisterOpen(!isRegisterOpen);
     }
+    const handleLogin = () => {
+        setLoginOpen(true);
+    }
     const handleGoodPopup = () => {
         setGoodPopupOpen(true);
     }
@@ -138,7 +141,7 @@ function App() {
                         <Header loggedIn={loggedIn} handleLoading={setLoad} auth={changeLoggedInStatus}
                                 isMenuOpen={isMenuOpen} onMenu={handleMenu} closeMenu={closeMenu}
                                 onAddPlace={handleForm} closePopup={handleForm} handleSearch={handleSearch}
-                                setSearch={setSearch}/>
+                                setSearch={setSearch} isLoginOpen={isLoginOpen} handleLogin ={handleLogin}/>
                         <Register close={closeAllPopups} isGoodPopupOpen={pushGoodPopup} closeRegister={closeRegister}
                                   isRegisterOpen={isRegisterOpen} closePopup={handleForm} onSignup={register}
                                   onEnter={onEnter}/>
@@ -149,7 +152,7 @@ function App() {
                         {isLoading ? <Preloader/> : ''}
                         {isBadRequest ? <Nothing/> : ''}
                         {articles.length>0 ? <NewsCardList articles={articles} keyword={search} isLoading={isLoading}
-                                                           handleLoading={handleLoading}
+                                                           handleLoading={handleLoading} loggedIn={loggedIn}
                                                            setArticles={setArticles} saveArticleRequest={saveArticleRequest}
                                                            isBadRequest={isBadRequest}/> : ''}
 
@@ -162,7 +165,7 @@ function App() {
                                     isMenuOpen={isMenuOpen} onMenu={handleMenu} closeMenu={closeMenu}
                                     auth={changeLoggedInStatus} loggedIn={loggedIn}
                                     saved={savedArticles} setSaved={setSavedArticles} articles={savedArticles}
-                                    deleteArticle={deleteArticleRequest}
+                                    deleteArticle={deleteArticleRequest} handleLogin = {handleLogin} onAddPlace={handleForm}
                     />
                 </Switch>
                 <Footer/>

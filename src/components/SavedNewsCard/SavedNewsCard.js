@@ -19,6 +19,11 @@ function SavedNewsCard(props) {
             })
             .catch(err => console.log(err))
     }
+    const changeDate = (date) => {
+        const postDate = new Date(date);
+        const changeDate = `${postDate.toLocaleString("ru-RU", { month: 'long', day: 'numeric' })}, ${postDate.getFullYear()}`;
+        return changeDate;
+    }
     return (
         <div id={id} className="news-card">
             <div className="news-card__buttons">
@@ -31,7 +36,7 @@ function SavedNewsCard(props) {
             <img data-name="" className="card__item" src={props.pic} alt="Картинка сохраненной новости"/>
             <div className="news-card__text-box">
                 <div className="news-card__text">
-                    <p className="news-card__date">{props.date}</p>
+                    <p className="news-card__date">{changeDate(props.date)}</p>
                     <h3 className="news-card__header">{props.title}</h3>
                     <p className="news-card__article">{props.text}</p>
                     <p className="news-card__source">{props.source}</p>

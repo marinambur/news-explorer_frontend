@@ -3,7 +3,7 @@ import './SavedNewsHeader.css';
 import { NavLink} from "react-router-dom";
 import {useHistory} from 'react-router-dom';
 import {CurrentUserContext} from "../../contexts/CurrentUserContext";
-function SavedNewsHeader({onMenu, isMenuOpen, closeMenu, auth}) {
+function SavedNewsHeader({onMenu, isMenuOpen, closeMenu, auth, handleLogin, loggedIn, onAddPlace}) {
     const { name } = React.useContext(CurrentUserContext);
     const history = useHistory();
     const [userName, setUserName] = React.useState('');
@@ -12,7 +12,9 @@ function SavedNewsHeader({onMenu, isMenuOpen, closeMenu, auth}) {
     }, [name]);
     function logOut () {
         history.push('/');
+        handleLogin();
         auth();
+
         localStorage.removeItem('jwt');
     }
 
@@ -38,9 +40,11 @@ function SavedNewsHeader({onMenu, isMenuOpen, closeMenu, auth}) {
                         <button className="navigation-news__mobile_close-button button-close" onClick={closeMenu}
                                 type="button"></button>
                         <a className="navigation-news__title navigation-news__title-mobile">News explorer</a>
-                        <a className="navigation-news__link-mobile">Главная</a>
-                        <a className="navigation-news__link-mobile">Сохранённые&nbsp;статьи</a>
-                        <a className="navigation-news__link-mobile_circle navigation-news__link_circle ">Авторизоваться</a>
+                        <NavLink
+                            to="/" className="navigation-news__link-mobile">Главная</NavLink>
+                        {loggedIn ? <NavLink
+                            to="/saved-news" className="navigation-news__link-mobile">Сохранённые&nbsp;статьи</NavLink> : ''}
+                        {loggedIn ? '' : <a className="navigation-news__link-mobile_circle navigation-news__link_circle " onClick={onAddPlace}>Авторизоваться</a>}
                     </div>
                 </div>
 
