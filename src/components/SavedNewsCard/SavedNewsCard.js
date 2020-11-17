@@ -15,7 +15,7 @@ function SavedNewsCard(props) {
                     localStorage.setItem('saved', JSON.stringify(result));
                     return result;
                 })
-                //setCardMarked();
+
             })
             .catch(err => console.log(err))
     }

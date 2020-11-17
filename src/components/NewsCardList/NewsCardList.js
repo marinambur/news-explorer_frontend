@@ -1,6 +1,7 @@
 import React from "react";
 import './NewsCardList.css';
 import NewsCard from "../NewsCard/NewsCard";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 
 function NewsCardList(props) {
@@ -30,7 +31,7 @@ function NewsCardList(props) {
                         <NewsCard key={Math.random()}  data={card}  id={card.id}
                                   loggedIn={props.loggedIn} saveNews={setSaved} image={card.urlToImage} date={card.publishedAt} title={card.title}
                                   text={card.description} source={card.source.name}
-                                  card={card} saveArticleRequest={props.saveArticleRequest} keyword = {props.keyword}
+                                  card={card} saveArticleRequest={props.saveArticleRequest} keyword = {props.keyword} mark = {props.mark} setCardMarked = {props.setCardMarked}
 
                         /> : ''
                     )) : 'notfound'}

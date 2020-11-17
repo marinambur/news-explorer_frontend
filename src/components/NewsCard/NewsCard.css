@@ -23,15 +23,7 @@
     background-image: url(../../images/bookmark2.svg);
 }
 
-.card__bookmark:active {
-    background-image: url(../../images/bookmark3.svg);
-    border: none;
-}
 
-.card__bookmark:focus {
-    background-image: url(../../images/bookmark3.svg);
-    border: none;
-}
 
 .card__item {
     -o-object-fit: cover;
@@ -133,6 +125,9 @@
     font-weight: bold;
     font-size: 16px;
     line-height: 20px;
+}
+.newscard__icon_marked {
+    background-image: url(../../images/bookmark3.svg);
 }
 
 @media (max-width: 1420px) {

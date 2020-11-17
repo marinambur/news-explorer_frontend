@@ -3,11 +3,17 @@ import './NewsCard.css';
 
 function NewsCard(props) {
     const [id, setId] = React.useState('');
+
+    console.log(props.mark)
     const saveArticle = () => {
         const jwt = localStorage.getItem('jwt');
+        console.log(props)
+
         props.saveArticleRequest(jwt, {keyword: props.keyword, title: props.title, text: props.text, date: props.date,
             source: props.source, link: props.data.url, image: props.image })
+
             .then((res) => {
+                props.setCardMarked();
                 console.log(res, 'savedinApi')
                  setId(res._id);
                 props.saveNews((myNews) => {
@@ -18,6 +24,14 @@ function NewsCard(props) {
             })
             .catch(err => console.log(err));
     }
+
+    React.useEffect(() => {
+        const savedArticle = JSON.parse(localStorage.getItem('saved'));
+        if (!savedArticle) return;
+        if (savedArticle.find(item => item === props.id)) {
+            props.setCardMarked();
+        }
+    }, [])
     const changeDate = (date) => {
         const postDate = new Date(date);
         const changeDate = `${postDate.toLocaleString("ru-RU", { month: 'long', day: 'numeric' })}, ${postDate.getFullYear()}`;
@@ -26,7 +40,7 @@ function NewsCard(props) {
     return (
         <div className="card">
             <div className="card__buttons">
-                {props.loggedIn ?  <button onClick={saveArticle} className="news-card__button card__bookmark"></button> : <button onClick={saveArticle} disabled={true} className="news-card__button card__bookmark">
+                {props.loggedIn ?  <button onClick={saveArticle} className={`news-card__button card__bookmark ${props.mark ? 'newscard__icon_marked' : ''}`}></button> : <button onClick={saveArticle} disabled={true} className="news-card__button card__bookmark">
                 </button>}
             </div>
             <button className="card__login news-card__delete">Войдите чтобы сохранить статьи</button>

@@ -16,6 +16,7 @@ import {CurrentUserContext} from '../../contexts/CurrentUserContext';
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import Preloader from "../Preloader/Preloader";
 import Nothing from "../Nothing/Nothing";
+import Results from "../Results/Results";
 
 function App() {
 
@@ -32,14 +33,22 @@ function App() {
     const [saved, setSaved] = React.useState([]);
     const [loggedIn, setLoggedIn] = React.useState(false);
     const [savedArticles, setSavedArticles] = React.useState([]);
+    const [mark, setmark] = React.useState(false);
 
+    function setCardMarked () {
+        setmark(true);
+    }
     React.useEffect(() => {
         const saved = localStorage.getItem('saved');
         if (saved) {
             setSaved(JSON.parse(saved));
         }
-    }, [articles])
+    }, [savedArticles])
 
+    React.useEffect(() => {
+        setArticles(JSON.parse(localStorage.getItem('articles')));
+
+    }, []);
     const pushGoodPopup = () => {
         setGoodPopupOpen(true);
     }
@@ -87,22 +96,36 @@ function App() {
     }
 
     const handleSearch = () => {
-        newsApi.getAllArticles(search)
-            .then((data) => {
-                setIsLoading(true)
-                localStorage.setItem('articles', JSON.stringify(data.articles));
-                if (data.articles < 1) {
-                    setBadRequest(true)
-                } else {
-                    setArticles(data.articles);
+        if (search) {
+            newsApi.getAllArticles(search)
+                .then((data) => {
+                    setIsLoading(true)
+                    localStorage.setItem('articles', JSON.stringify(data.articles));
+                    localStorage.setItem('search', search);
                     setBadRequest(false)
-                }
+                    setArticles([]);
 
-            })
-            .catch(err => console.log(err))
-            .finally(() => {
-                setIsLoading(false)
-            });
+                    setTimeout(function () {
+                        setIsLoading(false)
+                        if (data.articles < 1) {
+                            setBadRequest(true);
+                        } else {
+                            setArticles(data.articles);
+                        }
+                    }, 1000);
+
+
+                })
+                .catch(err => console.log(err))
+                .finally(() => {
+                    console.log('test')
+                    //setTimeout(() =>
+                    //setIsLoading(false)
+                        //, 1000);
+
+                });
+        }
+
 
     }
 
@@ -151,13 +174,13 @@ function App() {
                                handleRegister={handleRegister} setLoggedIn={setLoggedIn} close={closeAllPopups}/>
                         {isLoading ? <Preloader/> : ''}
                         {isBadRequest ? <Nothing/> : ''}
-                        {articles.length>0 ? <NewsCardList articles={articles} keyword={search} isLoading={isLoading}
+                         {articles && articles.length>0 ? <NewsCardList articles={articles} keyword={search} isLoading={isLoading}
                                                            handleLoading={handleLoading} loggedIn={loggedIn}
                                                            setArticles={setArticles} saveArticleRequest={saveArticleRequest}
+                                                           mark = {mark} setCardMarked = {setCardMarked}
                                                            isBadRequest={isBadRequest}/> : ''}
 
                         <About/>
-
                     </Route>
                     <ProtectedRoute exact path="/saved-news"
                                     component={SavedNewsHeader}

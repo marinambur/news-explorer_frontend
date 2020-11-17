@@ -45,14 +45,3 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
-@media screen and (max-width: 768px) {
-    .preloader {
-        padding: 40px 0;
-    }
-}
-
-@media screen and (max-width: 750px) {
-    .preloader {
-        display: none;
-    }
-}
