@@ -16,7 +16,7 @@ import {CurrentUserContext} from '../../contexts/CurrentUserContext';
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import Preloader from "../Preloader/Preloader";
 import Nothing from "../Nothing/Nothing";
-import Results from "../Results/Results";
+
 
 function App() {
 
@@ -30,20 +30,8 @@ function App() {
     const [isBadRequest, setBadRequest] = React.useState(false);
     const [articles, setArticles] = React.useState([]);
     const [user, setUser] = React.useState({name: '', email: ''});
-    const [saved, setSaved] = React.useState([]);
     const [loggedIn, setLoggedIn] = React.useState(false);
     const [savedArticles, setSavedArticles] = React.useState([]);
-    const [mark, setmark] = React.useState(false);
-
-    function setCardMarked () {
-        setmark(true);
-    }
-    React.useEffect(() => {
-        const saved = localStorage.getItem('saved');
-        if (saved) {
-            setSaved(JSON.parse(saved));
-        }
-    }, [savedArticles])
 
     React.useEffect(() => {
         setArticles(JSON.parse(localStorage.getItem('articles')));
@@ -177,7 +165,7 @@ function App() {
                          {articles && articles.length>0 ? <NewsCardList articles={articles} keyword={search} isLoading={isLoading}
                                                            handleLoading={handleLoading} loggedIn={loggedIn}
                                                            setArticles={setArticles} saveArticleRequest={saveArticleRequest}
-                                                           mark = {mark} setCardMarked = {setCardMarked}
+                                                                        saved={savedArticles}
                                                            isBadRequest={isBadRequest}/> : ''}
 
                         <About/>

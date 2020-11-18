@@ -25,7 +25,7 @@ class NewsApi {
         baseUrl: 'http://newsapi.org/v2/everything?' +
             'sortBy=popularity&' +
             'pageSize=100&' +
-            'apiKey=1a702ac97ae247f88011a08acffdd863',
+            'apiKey=776d3c0e31d24dc0a5f7090b88d31b37',
         headers: {
             // 'Content-Type': 'application/json'
         }

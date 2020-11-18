@@ -3,45 +3,50 @@ import './NewsCard.css';
 
 function NewsCard(props) {
     const [id, setId] = React.useState('');
+    const [blue, setblue] = React.useState(false);
 
-    console.log(props.mark)
+    function setCardBlue() {
+        setblue(true);
+    }
+
     const saveArticle = () => {
         const jwt = localStorage.getItem('jwt');
-        console.log(props)
-
-        props.saveArticleRequest(jwt, {keyword: props.keyword, title: props.title, text: props.text, date: props.date,
-            source: props.source, link: props.data.url, image: props.image })
-
+        props.saveArticleRequest(jwt, {
+            keyword: props.keyword, title: props.title, text: props.text, date: props.date,
+            source: props.source, link: props.data.url, image: props.image
+        })
             .then((res) => {
-                props.setCardMarked();
-                console.log(res, 'savedinApi')
-                 setId(res._id);
+                setId(res.data._id)
                 props.saveNews((myNews) => {
-                    console.log(myNews)
-                    localStorage.setItem('saved', JSON.stringify([...myNews, props.data.id]));
-                    return [...myNews, props.data.id]
+                    localStorage.setItem('saved', JSON.stringify([...myNews, res.data.title]));
+                    return [...myNews, res.data.title]
                 });
+                setCardBlue()
             })
             .catch(err => console.log(err));
     }
-
     React.useEffect(() => {
         const savedArticle = JSON.parse(localStorage.getItem('saved'));
         if (!savedArticle) return;
-        if (savedArticle.find(item => item === props.id)) {
-            props.setCardMarked();
+        if (savedArticle.find(item => item === props.title)) {
+            setCardBlue()
         }
     }, [])
     const changeDate = (date) => {
         const postDate = new Date(date);
-        const changeDate = `${postDate.toLocaleString("ru-RU", { month: 'long', day: 'numeric' })}, ${postDate.getFullYear()}`;
+        const changeDate = `${postDate.toLocaleString("ru-RU", {
+            month: 'long',
+            day: 'numeric'
+        })}, ${postDate.getFullYear()}`;
         return changeDate;
     }
     return (
         <div className="card">
             <div className="card__buttons">
-                {props.loggedIn ?  <button onClick={saveArticle} className={`news-card__button card__bookmark ${props.mark ? 'newscard__icon_marked' : ''}`}></button> : <button onClick={saveArticle} disabled={true} className="news-card__button card__bookmark">
-                </button>}
+                {props.loggedIn ? <button onClick={saveArticle}
+                                          className={`news-card__button card__bookmark ${blue ? 'newscard__icon_marked' : ''}`}></button> :
+                    <button onClick={saveArticle} disabled={true} className="news-card__button card__bookmark">
+                    </button>}
             </div>
             <button className="card__login news-card__delete">Войдите чтобы сохранить статьи</button>
             <img data-name="" className="card__item" src={props.card.urlToImage} alt="Картинка новости"/>
