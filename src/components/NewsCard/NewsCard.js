@@ -8,7 +8,6 @@ function NewsCard(props) {
     function setCardBlue() {
         setblue(true);
     }
-
     const saveArticle = () => {
         const jwt = localStorage.getItem('jwt');
         props.saveArticleRequest(jwt, {

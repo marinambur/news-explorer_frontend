@@ -10,7 +10,6 @@ function NewsCardList(props) {
     const moreArticles = () => {
         setQuantity(quantity + 3);
     }
-
     const [saved, setSaved] = React.useState([]);
     React.useEffect(() => {
         const saved = localStorage.getItem('saved');
@@ -26,11 +25,10 @@ function NewsCardList(props) {
 
                 <div className="news__grid">
                     {props.articles !== undefined ? props.articles.slice(0, quantity).map((card) => ( card !== undefined ?
-
                         <NewsCard key={Math.random()}  data={card}  id={card.id}
                                   loggedIn={props.loggedIn} saveNews={setSaved} image={card.urlToImage} date={card.publishedAt} title={card.title}
                                   text={card.description} source={card.source.name}
-                                  card={card} saveArticleRequest={props.saveArticleRequest} saved = {props.saved} keyword = {props.keyword} mark = {props.mark} setCardMarked = {props.setCardMarked}
+                                  card={card} saveArticleRequest={props.saveArticleRequest} saved = {props.saved} keyword = {card.keyword} mark = {props.mark} setCardMarked = {props.setCardMarked}
 
                         /> : ''
                     )) : 'notfound'}

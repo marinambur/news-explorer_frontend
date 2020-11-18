@@ -88,6 +88,14 @@ function App() {
             newsApi.getAllArticles(search)
                 .then((data) => {
                     setIsLoading(true)
+                    const articles = Array.from(data.articles);
+                    console.log(articles, 'artArr')
+                    articles.map((article, i) => {
+                        article.keyword = search;
+                        article.id = i + 1;
+                        return article;
+                    });
+                    console.log(data.articles)
                     localStorage.setItem('articles', JSON.stringify(data.articles));
                     localStorage.setItem('search', search);
                     setBadRequest(false)
@@ -106,10 +114,6 @@ function App() {
                 })
                 .catch(err => console.log(err))
                 .finally(() => {
-                    console.log('test')
-                    //setTimeout(() =>
-                    //setIsLoading(false)
-                        //, 1000);
 
                 });
         }
