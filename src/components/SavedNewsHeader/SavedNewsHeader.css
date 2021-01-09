@@ -100,8 +100,6 @@
     align-self: center;
 }
 
-.exit-icon-white {
-}
 
 .navigation-news__mobile_close-button {
     position: absolute;
@@ -135,6 +133,8 @@
 
 .navigation-news__button-text {
     margin: 11px;
+    color: black;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 1420px) {

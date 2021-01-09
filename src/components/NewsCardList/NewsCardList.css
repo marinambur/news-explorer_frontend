@@ -21,7 +21,9 @@
     padding-top: 50px;
     background: #F5F6F7;
 }
-
+.hidden {
+    display: none;
+}
 .news__box {
     width: 90%;
     margin: auto;

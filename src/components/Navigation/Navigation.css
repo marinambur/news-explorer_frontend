@@ -8,11 +8,46 @@
     width: 90%;
 
 }
+
+.navigation-news__link_white {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    align-self: center;
+    margin-right: 32px;
+    cursor: pointer;
+    padding-bottom: 19px;
+    margin-top: 35px;
+    text-decoration: none;
+    color: white;
+}
+.navigation-news__link-mobile {
+    color: white;
+    text-decoration: none;
+}
+.exit-icon_white {
+    background-image: url(../../images/logout.svg);
+    align-self: center;
+}
+
+.navigation-news__link_active-white {
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+}
+
 .navigation__header {
     width: 100%;
 
     border-bottom: 1px solid #B6BCBF;
 }
+
+.navigation-news__button-text-white {
+    margin: 11px;
+    color: white;
+}
+
 .navigation__title {
     font-family: 'Roboto Slab', Arial, sans-serif;
     font-size: 20px;
@@ -34,10 +69,12 @@
     text-align: center;
 
 }
+
 .navigation__link_active {
     border-bottom: 3px solid white;
     cursor: auto;
 }
+
 .navigation__link {
     font-family: 'Roboto', Arial, sans-serif;
     font-style: normal;
@@ -70,6 +107,7 @@
     display: flex;
     justify-content: space-between;
 }
+
 .navigation__menu_mobile {
     background-image: url(../../images/menu_white.svg);
     align-self: center;
@@ -81,6 +119,7 @@
     display: none;
 
 }
+
 .navigation__mobile {
     position: fixed;
     top: 0;
@@ -93,9 +132,11 @@
     z-index: 10;
     display: none;
 }
+
 .navigation__mobile_open {
     display: flex;
 }
+
 .navigation__title-mobile {
     font-size: 18px;
     height: 24px;
@@ -121,6 +162,14 @@
         margin-top: 2px;
     }
 
+    .navigation-news__link_white {
+        font-size: 16px;
+        margin-left: 16px;
+        width: 90%;
+        padding-bottom: 19px;
+        margin-top: 25px;
+    }
+
 }
 
 @media screen and (max-width: 750px) {
@@ -131,17 +180,28 @@
     .navigation__link {
         display: none;
     }
-    .navigation__menu_mobile {
-        display: flex;
-    }
-    .navigation__title {
-        font-size: 18px;
-    }
-    .navigation__link_circle {
+
+    .navigation-news__link_white {
         display: none;
     }
 
+    .navigation__menu_mobile {
+        display: flex;
+    }
+
+    .navigation__title {
+        font-size: 18px;
+    }
+
+    .navigation__link_circle {
+        display: none;
+    }
+    .navigation-news__mobile_close-button {
+        padding-top: 20px;
+    }
+
 }
+
 @media screen and (max-width: 560px) {
 
     .navigation__menu_opened {

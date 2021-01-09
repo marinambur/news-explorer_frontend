@@ -4,9 +4,11 @@
     width: 400px;
     position: relative;
 }
+
 .card__buttons {
     left: 340px;
 }
+
 .card__bookmark {
     background-image: url(../../images/bookmark1.svg);
     background-repeat: no-repeat;
@@ -17,18 +19,10 @@
     top: 16px;
 }
 
-.card__bookmark:hover {
-    background-image: url(../../images/bookmark2.svg);
-}
 
-.card__bookmark:active {
-    background-image: url(../../images/bookmark3.svg);
-    border: none;
-}
-.card__bookmark:focus {
-    background-image: url(../../images/bookmark3.svg);
-    border: none;
-}
+
+
+
 .card__item {
     -o-object-fit: cover;
     object-fit: cover;
@@ -37,6 +31,8 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     cursor: pointer;
+    max-height: 210px;
+    width: 100%;
 }
 
 .card__text {
@@ -53,6 +49,12 @@
     padding: 24px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+}
+
+.card__login {
+    position: absolute;
+    top: 16px;
+    right: 70px;
 }
 
 .card__header {
@@ -122,22 +124,34 @@
     font-size: 16px;
     line-height: 20px;
 }
+.newscard__icon_marked {
+    background-image: url(../../images/bookmark3.svg);
+}
 
 @media (max-width: 1420px) {
     .card__text {
         width: 202px;
         padding: 0 0 0 16px;
     }
+
     .card__item {
-        width: 224px;
     }
+
     .card {
         width: 224px;
     }
+
     .card__buttons {
         left: 166px;
     }
+
     .card__bookmark {
+    }
+
+    .card__login {
+        position: absolute;
+        top: 30px;
+        right: 0;
     }
 }
 
@@ -146,16 +160,20 @@
     }
 
 }
+
 @media (max-width: 700px) {
     .card__item {
-      width: 288px;
+        width: 100%;
     }
+
     .card {
-        width: 288px;
+        width: 100%;
     }
+
     .card__text {
-        width: 272px;
+        width: 100%;
     }
+
     .card__buttons {
         left: 231px;
     }

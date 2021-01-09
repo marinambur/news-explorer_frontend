@@ -1,7 +1,6 @@
 .news-card {
     background: #FFFFFF;
     border-radius: 10px;
-    width: 30%;
     position: relative;
 
 }
@@ -14,6 +13,8 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     cursor: pointer;
+    max-height: 200px;
+    width: 100%;
 }
 
 .news-card__text {
@@ -45,7 +46,12 @@
     line-height: 30px;
     letter-spacing: 0;
     text-align: left;
-
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    height: 92px;
 }
 
 .news-card__span-like {
@@ -91,6 +97,7 @@
     line-height: 20px;
     z-index: 1;
 }
+
 .news-card__button {
     width: 40px;
     height: 40px;
@@ -98,12 +105,14 @@
     border: none;
     background-color: white;
 }
+
 .news-card__trash {
     background-image: url(../../images/trash-grey.png);
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
 }
+
 .news-card__tag {
     width: 88px;
     height: 40px;
@@ -132,30 +141,33 @@
     font-weight: 500;
     line-height: 14px;
     text-align: center;
-
+    display: none;
 }
 
 .news-card__buttons {
     position: absolute;
-    width: 88px;
     height: 40px;
     top: 16px;
     left: 16px;
     display: flex;
-    width: 365px;
+    width: 90%;
     justify-content: space-between;
 }
+
 .news-card__text-box {
     margin-top: -4px;
 }
+
 @media (max-width: 1420px) {
     .news-card__text {
         width: 202px;
         padding: 0 0 0 16px;
     }
+
     .news__grid {
         grid-gap: 8px 8px;
     }
+
     .news-card__text-box {
         width: 224px;
         background-color: white;
@@ -163,15 +175,19 @@
         border-bottom-right-radius: 10px;
 
     }
+
     .news-card__item {
         width: 224px;
     }
+
     .news-card__button {
         right: -84px;
     }
+
     .news-card__buttons {
-        width: 192px;
+
     }
+
     .news-card__delete {
         display: none;
     }
@@ -182,11 +198,16 @@
     .news-card__item {
         width: 288px;
     }
+
     .news-card__text {
-        width: 272px;
+        width: 100%;
+    }
+    .news-card__text-box {
+        width: 100%;
+
     }
     .news-card__buttons {
-        width: 257px;
+
     }
 
 }

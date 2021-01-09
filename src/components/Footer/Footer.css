@@ -32,6 +32,8 @@
 }
 .footer__link {
     margin-left: 30px;
+    color: black;
+    text-decoration: none;
 }
 
 .footer__icons {

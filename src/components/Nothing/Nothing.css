@@ -1,0 +1,47 @@
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.preloader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F6F7;
+}
+.preloader__title {
+    font-family: 'Roboto Slab', Arial, sans-serif;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 30px;
+    margin: 24px 0 0;
+}
+.preloader__paragraph {
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #B6BCBF;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    margin: 0;
+    margin-top: 16px;
+    max-width: 340px;
+}
+.icon-preloader {
+    display: block;
+    width: 74px;
+    height: 74px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-left: none;
+    border-radius: 50%;
+    animation: spin .75s infinite linear;
+}
+.icon-not {
+    width: 96px;
+    height: 96px;
+    background-image: url(../../images/sad.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}

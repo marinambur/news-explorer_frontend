@@ -1,24 +1,60 @@
 import React from "react";
-import pic from '../../images/image_08.jpg';
-
 import './NewsCard.css';
 
-function NewsCard() {
+function NewsCard(props) {
+    const [id, setId] = React.useState('');
+    const [blue, setblue] = React.useState(false);
+
+    function setCardBlue() {
+        setblue(true);
+    }
+    const saveArticle = () => {
+        const jwt = localStorage.getItem('jwt');
+        props.saveArticleRequest(jwt, {
+            keyword: props.keyword, title: props.title, text: props.text, date: props.date,
+            source: props.source, link: props.data.url, image: props.image
+        })
+            .then((res) => {
+                setId(res.data._id)
+                props.saveNews((myNews) => {
+                    localStorage.setItem('saved', JSON.stringify([...myNews, res.data.title]));
+                    return [...myNews, res.data.title]
+                });
+                setCardBlue()
+            })
+            .catch(err => console.log(err));
+    }
+    React.useEffect(() => {
+        const savedArticle = JSON.parse(localStorage.getItem('saved'));
+        if (!savedArticle) return;
+        if (savedArticle.find(item => item === props.title)) {
+            setCardBlue()
+        }
+    }, [])
+    const changeDate = (date) => {
+        const postDate = new Date(date);
+        const changeDate = `${postDate.toLocaleString("ru-RU", {
+            month: 'long',
+            day: 'numeric'
+        })}, ${postDate.getFullYear()}`;
+        return changeDate;
+    }
     return (
         <div className="card">
             <div className="card__buttons">
-                <button className="news-card__button card__bookmark">
-                </button>
+                {props.loggedIn ? <button onClick={saveArticle}
+                                          className={`news-card__button card__bookmark ${blue ? 'newscard__icon_marked' : ''}`}></button> :
+                    <button onClick={saveArticle} disabled={true} className="news-card__button card__bookmark">
+                    </button>}
             </div>
-            <img data-name="" className="card__item" src={pic} alt="Картинка новости"/>
+            <button className="card__login news-card__delete">Войдите чтобы сохранить статьи</button>
+            <img data-name="" className="card__item" src={props.card.urlToImage} alt="Картинка новости"/>
             <div className="news-card__text-box">
                 <div className="card__text">
-                    <p className="card__date">2 августа, 2019</p>
-                    <h3 className="card__header">Национальное достояние – парки</h3>
-                    <p className="card__article">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала
-                        складываться система национальных парков – охраняемых территорий, где и сегодня каждый может
-                        приобщиться к природе.</p>
-                    <p className="card__source">ЛЕНТА.РУ</p>
+                    <p className="card__date">{changeDate(props.card.publishedAt)}</p>
+                    <h3 className="card__header">{props.card.title}</h3>
+                    <p className="card__article">{props.card.description}</p>
+                    <p className="card__source">{props.card.source.name}</p>
                 </div>
             </div>
         </div>
