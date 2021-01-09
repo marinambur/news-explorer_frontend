@@ -22,7 +22,7 @@ class NewsApi {
 
 }
     export const newsApi = new NewsApi({
-        baseUrl: 'http://newsapi.org/v2/everything?' +
+        baseUrl: 'https://newsapi.org/v2/everything?' +
             'sortBy=popularity&' +
             'pageSize=100&' +
             'apiKey=776d3c0e31d24dc0a5f7090b88d31b37',
