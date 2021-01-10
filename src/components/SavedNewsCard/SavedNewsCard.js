@@ -3,6 +3,7 @@ import React from "react";
 import './SavedNewsCard.css';
 
 function SavedNewsCard(props) {
+    console.log(props, 'props')
     const [id, setId] = React.useState('');
     const deleteArticle = (id) => {
         const jwt = localStorage.getItem('jwt');
@@ -14,7 +15,7 @@ function SavedNewsCard(props) {
                     console.log('yoyo')
                     console.log(prev)
                     console.log(id)
-                    const result = prev.filter(item => item !== props.id);
+                    const result = prev.filter(item => item !== props.title);
                     localStorage.removeItem('saved');
                     localStorage.setItem('saved', JSON.stringify(result));
                     return result;
