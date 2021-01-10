@@ -3,25 +3,38 @@ import React from "react";
 import './SavedNewsCard.css';
 
 function SavedNewsCard(props) {
-    console.log(props, 'props')
+    console.log(props.savedNews, 'props-saved')
     const [id, setId] = React.useState('');
     const deleteArticle = (id) => {
         const jwt = localStorage.getItem('jwt');
         props.delete(jwt, id)
-            .then((res) => {
+            .then((res)=>{
                 console.log(res);
-                console.log(id)
-                props.saveNews((prev) => {
-                    console.log('yoyo')
-                    console.log(prev)
-                    console.log(id)
-                    const result = prev.filter(item => item !== props.title);
-                    localStorage.removeItem('saved');
-                    localStorage.setItem('saved', JSON.stringify(result));
-                    return result;
-                })
-
+                let result = props.savedNews.filter(item => item._id !== id);
+                props.saveNews(result)
+                let result1 = res.filter(item => item !== props.title);
+                        localStorage.removeItem('saved');
+                        localStorage.setItem('saved', JSON.stringify(result1));
+                console.log('1111', result1)
             })
+            // .then((res) => {
+            //     console.log(res);
+            //     console.log(id)
+            //     props.saveNews((res) => {
+            //         console.log('yoyo')
+            //         console.log(res)
+            //         console.log(id)
+            //         let result = res.filter(item => item !== props.title);
+            //         console.log('1', res.filter(item => console.log(item)))
+            //         // localStorage.removeItem('saved');
+            //         // localStorage.setItem('saved', JSON.stringify(result));
+            //         props.saveNews(result)
+            //         console.log(result, 'result')
+            //         return result;
+            //     })
+            //
+            //
+            // })
             .catch(err => console.log(err))
     }
     const changeDate = (date) => {

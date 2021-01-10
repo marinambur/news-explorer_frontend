@@ -8,6 +8,7 @@ function SavedNews(props) {
     const { name } = React.useContext(CurrentUserContext);
     const [saved, setSaved] = React.useState([]);
     React.useEffect(() => {
+        const jwt = localStorage.getItem('jwt');
         const saved = localStorage.getItem('saved');
         if (saved) {
             setSaved(JSON.parse(saved));
@@ -50,7 +51,7 @@ function SavedNews(props) {
                 </div>
                 <div className="news__container">
                     <div className="news__grid">
-                        {props.saved.map(myArticle => <SavedNewsCard saved={true} saveNews={setSaved} key={myArticle._id} id={myArticle._id} loggedIn={props.loggedIn}
+                        {props.saved.map(myArticle => <SavedNewsCard saved={true} savedNews = {props.saved} saveNews={props.setSaved} key={myArticle._id} id={myArticle._id} loggedIn={props.loggedIn}
                                                          keyword={myArticle.keyword} pic={myArticle.image} date={myArticle.date}
                                                          title={myArticle.title} text={myArticle.text} source={myArticle.source} delete={props.deleteArticle}
                                                          />)}
