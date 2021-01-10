@@ -6,14 +6,6 @@ import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 function SavedNews(props) {
     const { name } = React.useContext(CurrentUserContext);
-    const [saved, setSaved] = React.useState([]);
-    React.useEffect(() => {
-        const jwt = localStorage.getItem('jwt');
-        const saved = localStorage.getItem('saved');
-        if (saved) {
-            setSaved(JSON.parse(saved));
-        }
-    }, [props.saved])
     React.useEffect(() => {
         const jwt = localStorage.getItem('jwt');
         MainApi.showArticles(jwt)

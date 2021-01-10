@@ -17,8 +17,8 @@ function NewsCard(props) {
             .then((res) => {
                 setId(res.data._id)
                 props.saveNews((myNews) => {
-                    localStorage.setItem('saved', JSON.stringify([...myNews, res.data.title]));
-                    return [...myNews, res.data.title]
+                    localStorage.setItem('saved', JSON.stringify([...myNews, res.data]));
+                    return [...myNews, res.data]
                 });
                 setCardBlue()
             })
@@ -27,7 +27,7 @@ function NewsCard(props) {
     React.useEffect(() => {
         const savedArticle = JSON.parse(localStorage.getItem('saved'));
         if (!savedArticle) return;
-        if (savedArticle.find(item => item === props.title)) {
+        if (savedArticle.find(item => item.title === props.title)) {
             setCardBlue()
         }
     }, [])

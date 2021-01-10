@@ -17,7 +17,6 @@ class MainApi {
     }
 
     signup ({ email, password, name }) {
-        console.log({ email, password, name })
         return fetch(`${this._url}/signup`, {
             method: 'POST',
             headers: this._headers,
@@ -81,8 +80,6 @@ class MainApi {
     }
 
     deleteArticle (token, id) {
-        console.log('token', token)
-        console.log('id', id)
         return fetch(`${this._url}/articles/${id}`, {
             method: 'DELETE',
             headers: {
