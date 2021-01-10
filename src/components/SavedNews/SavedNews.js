@@ -23,8 +23,8 @@ function SavedNews(props) {
     }, [])
     const [ keywords, setKeywords ] = React.useState([]);
     React.useEffect(() => {
-        setKeywords(sortByFrequency(props.articles.map(article => article.keyword[0].toUpperCase() + article.keyword.slice(1))));
-    }, [props.articles])
+        setKeywords(sortByFrequency(props.saved.map(article => article.keyword[0].toUpperCase() + article.keyword.slice(1))));
+    }, [props.saved])
 
     const sortByFrequency = (arr) => {
         const frequency = {};
@@ -37,13 +37,13 @@ function SavedNews(props) {
         const cases = [2, 0, 1, 1, 1, 2];
         return titles[ (number%100>4 && number%100<20)? 2 : cases[(number%10<5)?number%10:5] ];
     }
-    const savedText = declOfNum(props.articles.length, ['сохранённая статья', 'сохранённые статьи', 'сохранённых статей']);
+    const savedText = declOfNum(props.saved.length, ['сохранённая статья', 'сохранённые статьи', 'сохранённых статей']);
     return (
         <>
             <section className="savednews">
                 <div className="savednews__box">
                     <p className="card__date">Сохранённые статьи</p>
-                    <h3 className="card__header">{`${name}, у вас ${props.articles.length} ${savedText}`}</h3>
+                    <h3 className="card__header">{`${name}, у вас ${props.saved.length} ${savedText}`}</h3>
                     <p className="card__article">По ключевым словам: <span
                         className="card__article_span">{keywords.length > 3 ? `${keywords[0]}, ${keywords[1]} и ${keywords.length - 2}-м другим` : `${keywords.join(', ')}`}</span>
                     </p>

@@ -179,7 +179,7 @@ function App() {
                                     secondComponent={SavedNews}
                                     isMenuOpen={isMenuOpen} onMenu={handleMenu} closeMenu={closeMenu}
                                     auth={changeLoggedInStatus} loggedIn={loggedIn}
-                                    saved={savedArticles} setSaved={setSavedArticles} articles={savedArticles}
+                                    saved={savedArticles} setSaved={setSavedArticles}
                                     deleteArticle={deleteArticleRequest} handleLogin = {handleLogin} onAddPlace={handleForm}
                     />
                 </Switch>
