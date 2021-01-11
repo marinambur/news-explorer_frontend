@@ -40,14 +40,14 @@ function NewsCard(props) {
         return changeDate;
     }
     return (
-        <div className="card">
+        <a className="card card__href" href={props.card.url} rel="noreferrer noopener" target="_blank">
             <div className="card__buttons">
                 {props.loggedIn ? <button onClick={saveArticle}
                                           className={`news-card__button card__bookmark ${blue ? 'newscard__icon_marked' : ''}`}></button> :
-                    <button onClick={saveArticle} disabled={true} className="news-card__button card__bookmark">
-                    </button>}
+                    <><button onClick={saveArticle} disabled={true} className="news-card__button card__bookmark"><button className="tooltip">Войдите чтобы сохранить статьи</button></button>
+                    </>}
             </div>
-            <button className="card__login news-card__delete">Войдите чтобы сохранить статьи</button>
+
             <img data-name="" className="card__item" src={props.card.urlToImage} alt="Картинка новости"/>
             <div className="news-card__text-box">
                 <div className="card__text">
@@ -57,7 +57,7 @@ function NewsCard(props) {
                     <p className="card__source">{props.card.source.name}</p>
                 </div>
             </div>
-        </div>
+  </a>
     );
 }
 

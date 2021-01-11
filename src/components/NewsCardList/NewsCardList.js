@@ -5,6 +5,7 @@ import NewsCard from "../NewsCard/NewsCard";
 
 
 function NewsCardList(props) {
+    console.log(props)
     const [quantity, setQuantity] = React.useState(3);
 
     const moreArticles = () => {
@@ -27,7 +28,7 @@ function NewsCardList(props) {
                     {props.articles !== undefined ? props.articles.slice(0, quantity).map((card) => ( card !== undefined ?
                         <NewsCard key={Math.random()}  data={card}  id={card.id}
                                   loggedIn={props.loggedIn} saveNews={setSaved} image={card.urlToImage} date={card.publishedAt} title={card.title}
-                                  text={card.description} source={card.source.name}
+                                  text={card.description} source={card.source.name} url={card.url}
                                   card={card} saveArticleRequest={props.saveArticleRequest} saved = {props.saved} keyword = {card.keyword} mark = {props.mark} setCardMarked = {props.setCardMarked}
 
                         /> : ''

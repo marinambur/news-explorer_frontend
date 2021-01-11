@@ -12,7 +12,7 @@ function SearchForm(props) {
     }
     return (
         <div className="search-form__search">
-            <input className="search-form__input" onChange={handleSearchInput} placeholder="Введите тему новости" required type="search"/>
+            <input className="search-form__input" onChange={handleSearchInput} placeholder="Введите тему новости RU/ENG" required type="search"/>
             <input className="search-form__button button" onClick={handleSubmit} type="submit" value="Искать"/>
         </div>
     );

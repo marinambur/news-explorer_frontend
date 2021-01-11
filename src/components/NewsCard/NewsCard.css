@@ -8,7 +8,10 @@
 .card__buttons {
     left: 340px;
 }
-
+.card__href {
+    text-decoration: none;
+    cursor: pointer;
+}
 .card__bookmark {
     background-image: url(../../images/bookmark1.svg);
     background-repeat: no-repeat;
@@ -19,7 +22,17 @@
     top: 16px;
 }
 
-
+.tooltip {
+    border: none;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    border-radius: 10px;
+}
 
 
 
@@ -52,10 +65,11 @@
 }
 
 .card__login {
-    position: absolute;
+
     top: 16px;
     right: 70px;
 }
+
 
 .card__header {
     margin-block-start: 0;
@@ -124,6 +138,7 @@
     font-size: 16px;
     line-height: 20px;
 }
+
 .newscard__icon_marked {
     background-image: url(../../images/bookmark3.svg);
 }
