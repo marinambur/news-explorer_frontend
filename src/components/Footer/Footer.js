@@ -8,7 +8,6 @@ function Footer() {
             <div className="footer__container">
                 <div className="footer__links">
                     <Link to="/" className='footer__link'>Главная</Link>
-                    <a className="footer__link" href="https://praktikum.yandex.ru/web" target="_blank" rel="noopener noreferrer">Яндекс.Практикум</a>
                 </div>
                 <div className="footer__social">
                     <a className="footer__icons github" href="https://github.com/marinambur" target="_blank" rel="noopener noreferrer"> </a>
