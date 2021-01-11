@@ -27,6 +27,8 @@
 .news__box {
     width: 90%;
     margin: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .news__header {
@@ -45,8 +47,6 @@
     color: black;
     background: white;
     align-self: center;
-    margin-left: 35%;
-    margin-top: 64px;
     margin-bottom: 80px;
 }
 
@@ -82,6 +82,5 @@
 
     .news__button {
         height: 56px;
-        margin: 15px auto 32px auto;
     }
 }

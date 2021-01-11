@@ -26,6 +26,8 @@
 .navigation-news__link-mobile {
     color: white;
     text-decoration: none;
+    margin: 0;
+    cursor: pointer;
 }
 .exit-icon_white {
     background-image: url(../../images/logout.svg);

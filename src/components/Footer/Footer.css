@@ -90,10 +90,10 @@
         flex-direction: column;
     }
     .footer__social {
-        margin-top: -12px;
+        margin: -12px auto 12px auto;
     }
     .footer__link {
-        margin-bottom: 35px;
+        visibility: hidden;
     }
     .footer__container {
         margin: 0;

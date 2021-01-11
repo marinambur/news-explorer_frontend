@@ -37,7 +37,7 @@ function Navigation({ onAddPlace, isOpen, onMenu, isMenuOpen, closeMenu, loggedI
                         to="/" className="navigation-news__link-mobile">Главная</NavLink>
                     {loggedIn ? <NavLink
                         to="/saved-news" className="navigation-news__link-mobile">Сохранённые&nbsp;статьи</NavLink> : ''}
-                    {loggedIn ? '' : <a className="navigation-news__link-mobile_circle navigation-news__link_circle " onClick={onAddPlace}>Авторизоваться</a>}
+                    {loggedIn ? <p onClick={logOut} className="navigation-news__link-mobile">Выйти</p> : <a className="navigation-news__link-mobile_circle navigation-news__link_circle " onClick={onAddPlace}>Авторизоваться</a>}
                 </div>
             </div>
 
