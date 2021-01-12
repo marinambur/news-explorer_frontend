@@ -13,9 +13,9 @@ function About() {
                 <p className="about__subtitle">Данный сайт выполнен на React, с использованием NewsAPI.</p>
                 <p className="about__subtitle">Бэк на NodeJs
                     (express), MongoDB.</p>
-                <p className="about__subtitle">Код на github: <a
+                <p className="about__subtitle">Код на github: <a className="about__link"
                     href="https://github.com/marinambur/news-explorer_frontend" target="_blank"
-                    rel="noopener noreferrer">фронт</a> и <a href="https://github.com/marinambur/news-explorer-api"
+                    rel="noopener noreferrer">фронт</a> и <a className="about__link" href="https://github.com/marinambur/news-explorer-api"
                                                              target="_blank" rel="noopener noreferrer">бэк</a>.</p>
 
                 <p className="about__subtitle">По всем вопросам можете писать @kuzmarina (Telegram)</p>

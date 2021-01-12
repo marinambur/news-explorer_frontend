@@ -2,7 +2,7 @@
     height: 630px;
     background: url("../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.jpg") no-repeat;
     background-size: cover;
-    color: white;
+    color: bisque;
 }
 
 .header__title {
@@ -53,12 +53,7 @@
     }
 
 }
-@media screen and (max-width: 769px) {
-    .header {
-        height: 400px;
-        background: url("../../images/pic-tablet.jpg") no-repeat;
-    }
-}
+
 @media screen and (max-width: 750px) {
     .header__title {
         padding-top: 30px;
@@ -72,10 +67,15 @@
         width: 90%;
     }
 }
-
+@media screen and (max-width: 630px) {
+    .header {
+        height: 400px;
+        background: url("../../images/georgia-de-lotz--UsJoNxLaNo-unsplash1.jpg") no-repeat;
+    }
+}
 @media screen and (max-width: 320px) {
     .header {
         height: 536px;
-        background: url("../../images/pic-mobile.jpg") no-repeat;
+        background: url("../../images/georgia-de-lotz--UsJoNxLaNo-unsplash1.jpg") no-repeat;
     }
 }

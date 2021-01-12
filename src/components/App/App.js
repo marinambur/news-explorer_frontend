@@ -168,7 +168,7 @@ function App() {
                         {isBadRequest ? <Nothing/> : ''}
                          {articles && articles.length>0 ? <NewsCardList articles={articles} keyword={search} isLoading={isLoading}
                                                            handleLoading={handleLoading} loggedIn={loggedIn}
-                                                           setArticles={setArticles} saveArticleRequest={saveArticleRequest}
+                                                           setArticles={setArticles} saveArticleRequest={saveArticleRequest} deleteArticle={deleteArticleRequest}
                                                                         saved={savedArticles}
                                                            isBadRequest={isBadRequest}/> : ''}
 

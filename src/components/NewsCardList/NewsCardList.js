@@ -28,7 +28,7 @@ function NewsCardList(props) {
                         <NewsCard key={Math.random()}  data={card}  id={card.id}
                                   loggedIn={props.loggedIn} saveNews={setSaved} image={card.urlToImage} date={card.publishedAt} title={card.title}
                                   text={card.description} source={card.source.name} url={card.url}
-                                  card={card} saveArticleRequest={props.saveArticleRequest} saved = {props.saved} keyword = {card.keyword} mark = {props.mark} setCardMarked = {props.setCardMarked}
+                                  card={card} saveArticleRequest={props.saveArticleRequest} delete={props.deleteArticle} saved = {props.saved} keyword = {card.keyword} mark = {props.mark} setCardMarked = {props.setCardMarked}
 
                         /> : ''
                     )) : 'notfound'}

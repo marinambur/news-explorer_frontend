@@ -5,6 +5,10 @@
     justify-content: space-between;
     margin-bottom: 80px;
 }
+.about__link {
+    color: brown;
+    text-decoration: #888888;
+}
 .about__picture {
     margin-bottom: 80px;
     border-radius: 323px;
@@ -17,6 +21,7 @@
 
 .about__title {
     font-family: 'Roboto';
+    color: #2F71E5;
     font-size: 40px;
     font-style: normal;
     font-weight: 400;
