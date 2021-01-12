@@ -31,7 +31,7 @@ function SavedNewsCard(props) {
                 <button onClick={() => deleteArticle(props.id)} className="news-card__button news-card__trash">
                 </button>
             </div>
-
+            <a className="card__href" href={props.link} rel="noreferrer noopener" target="_blank">
             <img data-name="" className="card__item" src={props.pic} alt="Картинка сохраненной новости"/>
             <div className="news-card__text-box">
                 <div className="news-card__text">
@@ -41,6 +41,7 @@ function SavedNewsCard(props) {
                     <p className="news-card__source">{props.source}</p>
                 </div>
             </div>
+            </a>
         </div>
     );
 }

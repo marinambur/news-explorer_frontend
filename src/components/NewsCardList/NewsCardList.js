@@ -5,7 +5,6 @@ import NewsCard from "../NewsCard/NewsCard";
 
 
 function NewsCardList(props) {
-    console.log(props)
     const [quantity, setQuantity] = React.useState(3);
 
     const moreArticles = () => {

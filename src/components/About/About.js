@@ -10,8 +10,7 @@ function About() {
                 <h3 className="about__title">Об авторе</h3>
                 <p className="about__subtitle">Меня зовут Марина Кузнецова, я frontend-разработчик.</p>
 
-                <p className="about__subtitle">Данный сайт выполнен на React, с использованием NewsAPI. Бэк на NodeJs
-                    (express), MongoDB.</p>
+                <p className="about__subtitle">Данный сайт выполнен на React, с использованием NewsAPI.</p>
                 <p className="about__subtitle">Бэк на NodeJs
                     (express), MongoDB.</p>
                 <p className="about__subtitle">Код на github: <a

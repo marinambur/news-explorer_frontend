@@ -44,7 +44,7 @@ function SavedNews(props) {
                 <div className="news__container">
                     <div className="news__grid">
                         {props.saved.map(myArticle => <SavedNewsCard saved={true} savedNews = {props.saved} saveNews={props.setSaved} key={myArticle._id} id={myArticle._id} loggedIn={props.loggedIn}
-                                                         keyword={myArticle.keyword} pic={myArticle.image} date={myArticle.date}
+                                                         keyword={myArticle.keyword} pic={myArticle.image} date={myArticle.date} link = {myArticle.link}
                                                          title={myArticle.title} text={myArticle.text} source={myArticle.source} delete={props.deleteArticle}
                                                          />)}
                     </div>
