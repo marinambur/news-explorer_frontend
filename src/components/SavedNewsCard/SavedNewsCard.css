@@ -15,7 +15,7 @@
 
 .saved_card__item {
     -o-object-fit: cover;
-    object-fit: cover;
+    object-fit: revert;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-top-left-radius: 10px;
@@ -28,7 +28,7 @@
 
 .saved_news-card__item {
     -o-object-fit: cover;
-    object-fit: cover;
+    object-fit: revert;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-top-left-radius: 10px;

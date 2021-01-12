@@ -5,6 +5,13 @@
     position: relative;
 }
 
+.news-card__button {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+}
 .card__buttons {
     left: 340px;
 }
@@ -39,7 +46,7 @@
 
 .card__item {
     -o-object-fit: cover;
-    object-fit: cover;
+    object-fit: revert;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-top-left-radius: 10px;
@@ -143,6 +150,7 @@
 .newscard__icon_marked {
     background-image: url(../../images/bookmark3.svg);
 }
+
 
 @media (max-width: 1420px) {
     .card__text {
