@@ -58,7 +58,7 @@
 
 @media (max-width: 750px) {
     .news__grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
     }
 }
 

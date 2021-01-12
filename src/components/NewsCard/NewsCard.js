@@ -44,8 +44,8 @@ function NewsCard(props) {
             <div className="card__buttons">
                 {props.loggedIn ? <button onClick={saveArticle}
                                           className={`news-card__button card__bookmark ${blue ? 'newscard__icon_marked' : ''}`}></button> :
-                    <><button onClick={saveArticle} disabled={true} className="news-card__button card__bookmark"><button className="tooltip">Войдите чтобы сохранить статьи</button></button>
-                    </>}
+                    <button className="tooltip">Войдите чтобы сохранить статьи</button>
+                    }
             </div>
 
             <img data-name="" className="card__item" src={props.card.urlToImage} alt="Картинка новости"/>

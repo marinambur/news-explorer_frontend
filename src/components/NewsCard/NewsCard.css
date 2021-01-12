@@ -8,10 +8,12 @@
 .card__buttons {
     left: 340px;
 }
+
 .card__href {
     text-decoration: none;
     cursor: pointer;
 }
+
 .card__bookmark {
     background-image: url(../../images/bookmark1.svg);
     background-repeat: no-repeat;
@@ -33,7 +35,6 @@
     font-style: normal;
     border-radius: 10px;
 }
-
 
 
 .card__item {
@@ -170,27 +171,38 @@
     }
 }
 
-@media (max-width: 900px) {
-    .card__bookmark {
-    }
-
-}
-
-@media (max-width: 700px) {
+@media (max-width: 750px) {
     .card__item {
         width: 100%;
     }
 
     .card {
-        width: 100%;
+        width: 50%;
+        margin: auto;
     }
 
     .card__text {
-        width: 89%;
+        width: 100%;
     }
 
     .card__buttons {
         left: 231px;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .card {
+        width: 40%;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .card {
+        width: 35%;
     }
 
 }
