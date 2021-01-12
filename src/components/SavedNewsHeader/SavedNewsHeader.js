@@ -21,7 +21,8 @@ function SavedNewsHeader({onMenu, isMenuOpen, closeMenu, auth, handleLogin, logg
     return (
         <div className="navigation-news_header">
             <div className="navigation-news">
-                <a className="navigation-news__title">News explorer</a>
+                <NavLink
+                    to="/" className="saved_navigation-news__title">News explorer</NavLink>
                 <div className="navigation-news__container">
                     <NavLink
                         exact

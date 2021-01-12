@@ -32,7 +32,8 @@ function Navigation({ onAddPlace, isOpen, onMenu, isMenuOpen, closeMenu, loggedI
                 <div className={`navigation-news__mobile ${isMenuOpen ? 'navigation-news__mobile_open' : ''}`}>
                     <button className="navigation-news__mobile_close-button button-close" onClick={closeMenu}
                             type="button"></button>
-                    <a className="navigation-news__title navigation-news__title-mobile">News explorer</a>
+                    <NavLink
+                        to="/" className="navigation-news__title navigation-news__title-mobile">News explorer</NavLink>
                     <NavLink
                         to="/" className="navigation-news__link-mobile">Главная</NavLink>
                     {loggedIn ? <NavLink
