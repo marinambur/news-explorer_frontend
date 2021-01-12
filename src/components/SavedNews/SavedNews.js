@@ -41,8 +41,8 @@ function SavedNews(props) {
                         className="card__article_span">{keywords.length > 3 ? `${keywords[0]}, ${keywords[1]} и ${keywords.length - 2}-м другим` : `${keywords.join(', ')}`}</span>
                     </p>
                 </div>
-                <div className="news__container">
-                    <div className="news__grid">
+                <div className="saved_news__container">
+                    <div className="saved_news__grid">
                         {props.saved.map(myArticle => <SavedNewsCard saved={true} savedNews = {props.saved} saveNews={props.setSaved} key={myArticle._id} id={myArticle._id} loggedIn={props.loggedIn}
                                                          keyword={myArticle.keyword} pic={myArticle.image} date={myArticle.date} link = {myArticle.link}
                                                          title={myArticle.title} text={myArticle.text} source={myArticle.source} delete={props.deleteArticle}

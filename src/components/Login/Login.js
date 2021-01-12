@@ -42,7 +42,6 @@ const Login = ({isLoginOpen, isConfirm, handleRegister, onSignin, setLoggedIn, c
             .then((res) => {
                 close()
                 setLoggedIn(true);
-                console.log(res);
                 localStorage.setItem('jwt', res.token)
             })
             .catch((err) => {
