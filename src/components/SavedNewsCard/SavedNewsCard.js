@@ -34,7 +34,7 @@ function SavedNewsCard(props) {
             <a className="card__href" href={props.link} rel="noreferrer noopener" target="_blank">
             <img data-name="" className="card__item" src={props.pic} alt="Картинка сохраненной новости"/>
             <div className="news-card__text-box">
-                <div className="news-card__text">
+                <div className="saved_news-card__text">
                     <p className="news-card__date">{changeDate(props.date)}</p>
                     <h3 className="news-card__header">{props.title}</h3>
                     <p className="news-card__article">{props.text}</p>
